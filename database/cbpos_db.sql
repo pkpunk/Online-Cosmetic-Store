@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2022 at 09:47 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Generation Time: Nov 28, 2022 at 10:37 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -42,12 +43,17 @@ CREATE TABLE `brands` (
 --
 
 INSERT INTO `brands` (`id`, `name`, `description`, `image_path`, `status`, `delete_flag`, `date_created`) VALUES
-(1, 'L’Oreal', 'L’Oreal  manufactures and markets a wide range of skincare, makeup, fragrance, and hair care products', 'uploads/brands/1.jpg?v=1645066502', 1, 0, '2022-02-17 10:55:02'),
-(2, 'test', 'test', NULL, 1, 1, '2022-02-17 10:57:41'),
-(3, 'Nivea', 'Nivea manufactures and markets skin, sun, lip and deodorant products', 'uploads/brands/3.jpg?v=1645066772', 1, 0, '2022-02-17 10:59:32'),
-(4, 'Olay', 'Olay manufactures and markets face and skin care products', 'uploads/brands/4.jpg?v=1645066818', 1, 0, '2022-02-17 11:00:18'),
-(5, 'LUX', 'A global personal care brand by Unilever, Lux product categories include soaps, shower gels, bath products, shampoos, and conditioners. Lux is a strong advocate of sustainable causes and is sold in more than 100 countries worldwide.', 'uploads/brands/5.jpg?v=1645066872', 1, 0, '2022-02-17 11:01:12'),
-(6, 'AVON', 'Avon is a direct sales company operating in the skin, body, fragrance, make-up, sun care and fashion markets. A leading company within the direct sales market, Avon has millions of beauty advisors worldwide and recently moved its headquarters from the U.S. to the UK.', 'uploads/brands/6.jpg?v=1645066909', 1, 0, '2022-02-17 11:01:49');
+(1, 'L’Oreal', 'L’Oreal  manufactures and markets a wide range of skincare, makeup, fragrance, and hair care products', 'uploads/brands/1.jpg?v=1645066502', 1, 0, '2022-07-31 11:55:02'),
+(2, 'test', 'test', NULL, 1, 1, '2022-07-31 00:00:00'),
+(3, 'Nivea', 'Nivea manufactures and markets skin, sun, lip and deodorant products', 'uploads/brands/3.jpg?v=1645066772', 1, 0, '2022-07-31 11:59:32'),
+(4, 'Olay', 'Olay manufactures and markets face and skin care products', 'uploads/brands/4.jpg?v=1645066818', 1, 0, '2022-07-31 12:00:18'),
+(5, 'LUX', 'A global personal care brand by Unilever, Lux product categories include soaps, shower gels, bath products, shampoos, and conditioners. Lux is a strong advocate of sustainable causes and is sold in more than 100 countries worldwide.', 'uploads/brands/5.jpg?v=1645066872', 1, 0, '2022-07-31 12:01:12'),
+(6, 'AVON', 'Avon is a direct sales company operating in the skin, body, fragrance, make-up, sun care and fashion markets. A leading company within the direct sales market, Avon has millions of beauty advisors worldwide and recently moved its headquarters from the U.S. to the UK.', 'uploads/brands/6.jpg?v=1645066909', 1, 0, '2022-07-31 12:01:49'),
+(8, 'Uniliver', 'EcoFriendly', 'uploads/brands/8.jpg?v=1661871866', 1, 0, '2022-08-30 20:49:26'),
+(9, 'Sunsilk', 'For better Hair', 'uploads/brands/9.jpg?v=1661872256', 1, 0, '2022-08-30 20:55:56'),
+(10, 'Lotus', 'best Brand', 'uploads/brands/10.jpg?v=1661872936', 1, 0, '2022-08-30 21:07:16'),
+(11, 'Lakme', 'Natural', 'uploads/brands/11.jpg?v=1661875397', 1, 0, '2022-08-30 21:48:17'),
+(12, 'ABC', 'Better Products', 'uploads/brands/12.jpg?v=1661908237', 1, 0, '2022-08-31 06:55:37');
 
 -- --------------------------------------------------------
 
@@ -84,16 +90,15 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category`, `description`, `status`, `delete_flag`, `date_created`) VALUES
-(1, 'Skin Care', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi congue interdum pellentesque. Praesent bibendum vehicula libero a congue. In molestie rhoncus finibus.', 1, 0, '2022-02-17 11:27:11'),
-(2, 'Oral Care', 'n interdum quis urna sed auctor. Vivamus a ligula ut dui aliquam efficitur ut eu ante. Phasellus pretium ut risus vitae euismod. Cras ac velit mollis, sodales urna vitae, pharetra dui. Mauris et sem vel est interdum lobortis sit amet quis felis.', 1, 0, '2022-02-17 11:27:24'),
-(3, 'Body Care', 'n interdum quis urna sed auctor. Vivamus a ligula ut dui aliquam efficitur ut eu ante. Phasellus pretium ut risus vitae euismod. Cras ac velit mollis, sodales urna vitae, pharetra dui. Mauris et sem vel est interdum lobortis sit amet quis felis.', 1, 0, '2022-02-17 11:27:45'),
-(4, 'Perfumes', 'Donec sit amet consectetur leo, eu lacinia risus. Donec dignissim magna lectus, vitae viverra lacus blandit vitae.', 1, 0, '2022-02-17 11:27:55'),
-(5, 'Hair Care', 'Proin sit amet elit in massa posuere ullamcorper quis quis sem. Phasellus accumsan augue vitae varius rhoncus. Proin vitae leo ante. Praesent a lorem justo.', 1, 0, '2022-02-17 11:28:38'),
-(6, 'Sun Care', 'Nam nisl ex, condimentum nec malesuada cursus, ullamcorper in velit. Quisque lobortis diam nunc, at auctor felis placerat eu. Nullam egestas rhoncus lacinia.', 1, 0, '2022-02-17 11:29:00'),
-(7, 'Decorative', 'Donec imperdiet viverra eros eu elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean in nulla nec ex cursus consequat nec vel ipsum. Phasellus tristique erat sit amet neque venenatis volutpat. Maecenas varius venenatis sagittis.', 1, 0, '2022-02-17 11:29:19'),
-(8, 'Lipsticks', 'Nullam quis gravida purus, quis sagittis nibh. Ut eget maximus nisl. Nam elementum diam libero, et scelerisque nisi molestie quis. Duis accumsan, neque nec laoreet malesuada, est ex pretium urna, at pellentesque arcu mauris a est. Proin et sollicitudin dui. Integer consectetur pulvinar tellus in fermentum.', 1, 0, '2022-02-17 11:29:38'),
-(9, 'Lip Tint', 'Donec eu porttitor quam. Etiam mollis consequat risus quis maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas', 1, 0, '2022-02-17 11:29:59'),
-(10, 'test', 'test', 0, 1, '2022-02-17 11:31:18');
+(1, 'Skin Care', 'For healthy and moist skin', 1, 0, '2022-07-31 11:27:11'),
+(2, 'Oral Care', ' For healthy mouth', 1, 0, '2022-07-31 11:27:29'),
+(3, 'Body Care', 'For Helthy Body', 1, 0, '2022-07-31 11:27:45'),
+(4, 'Perfumes', 'For Better smell', 1, 0, '2022-07-31 11:27:55'),
+(5, 'Hair Care', 'For Healthy And Long hair', 1, 0, '2022-07-31 11:28:04'),
+(8, 'Lipsticks', 'For a Perfect Lady', 1, 0, '2022-07-31 11:29:38'),
+(9, 'Lip Tint', 'For Healthy Lips', 1, 0, '2022-07-31 11:29:59'),
+(10, 'test', 'test', 0, 1, '2022-07-31 11:31:18'),
+(11, 'Foot Care', 'For healthy foot', 1, 0, '2022-08-31 06:54:40');
 
 -- --------------------------------------------------------
 
@@ -120,7 +125,7 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `firstname`, `lastname`, `gender`, `contact`, `email`, `password`, `default_delivery_address`, `status`, `delete_flag`, `date_created`) VALUES
-(2, 'Samantha Jane', 'Miller', 'Female', '09123456789', 'sam23@sample.com', '45bff2a14658fc9b21c6e5e9bf75186b', 'Sample Address', 1, 0, '2022-02-17 14:24:00');
+(3, 'Pradip ', 'Thagunna', 'Male', '9876543212', 'pkpunk31@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Sitapaila', 1, 0, '2022-08-30 20:03:33');
 
 -- --------------------------------------------------------
 
@@ -143,12 +148,15 @@ CREATE TABLE `inventory` (
 --
 
 INSERT INTO `inventory` (`id`, `variant`, `product_id`, `quantity`, `price`, `date_created`, `date_updated`) VALUES
-(1, 'Variant 1', 1, 10, 155, '2022-02-17 11:57:52', NULL),
-(2, 'Variant 2', 1, 5, 200, '2022-02-17 12:01:15', NULL),
-(3, 'Variant 3', 1, 10, 1055.58, '2022-02-17 12:04:15', NULL),
-(4, 'Variant 1', 3, 25, 250, '2022-02-17 13:22:54', NULL),
-(5, 'Variant 2', 3, 25, 300, '2022-02-17 13:23:05', NULL),
-(6, 'Variant 1', 4, 100, 350, '2022-02-17 16:28:14', NULL);
+(8, '1', 11, 300, 100, '2022-08-30 21:13:10', NULL),
+(11, '1', 8, 500, 299, '2022-08-30 21:14:21', NULL),
+(12, '1', 9, 1000, 299, '2022-08-30 21:14:47', NULL),
+(13, '3', 10, 500, 299, '2022-08-30 21:15:04', NULL),
+(14, '1', 12, 1000, 400, '2022-08-30 21:50:23', NULL),
+(15, '1', 13, 100, 299, '2022-08-30 22:00:15', NULL),
+(16, '1', 14, 1000, 150, '2022-08-31 06:56:32', NULL),
+(17, '1', 15, 100, 150, '2022-08-31 07:03:48', NULL),
+(18, '1', 16, 100, 130, '2022-08-31 07:05:03', NULL);
 
 -- --------------------------------------------------------
 
@@ -175,9 +183,32 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `ref_code`, `client_id`, `delivery_address`, `payment_method`, `order_type`, `amount`, `status`, `paid`, `date_created`, `date_updated`) VALUES
-(3, '20220200001', 2, 'Sample Address', 'cod', 0, 900, 4, 0, '2022-02-17 14:51:58', '2022-02-17 15:04:38'),
-(4, '20220200002', 2, 'Sample Address', 'Online Payment', 0, 1800, 3, 1, '2022-02-17 15:26:17', '2022-02-17 15:35:45'),
-(5, '20220200003', 2, 'Sample Address', 'cod', 0, 500, 3, 1, '2022-02-17 15:32:52', '2022-02-17 15:35:32');
+(6, '20220800001', 3, 'Sitapaila', 'cod', 0, 350, 4, 0, '2022-08-30 20:03:51', '2022-08-30 21:28:33'),
+(7, '20220800002', 3, 'Sitapaila', 'cod', 0, 1250, 4, 0, '2022-08-30 20:04:25', '2022-08-30 21:28:06'),
+(8, '20220800003', 3, 'Sitapaila', 'cod', 0, 155, 4, 0, '2022-08-30 20:10:09', '2022-08-30 21:28:02'),
+(9, '20220800004', 3, 'Sitapaila', 'cod', 0, 400, 4, 0, '2022-08-30 21:27:23', '2022-08-30 21:27:57'),
+(10, '20220800005', 3, 'Sitapaila', 'cod', 0, 400, 4, 0, '2022-08-30 21:27:35', '2022-08-30 21:27:49'),
+(11, '20220800006', 3, 'Sitapaila', 'cod', 0, 500, 0, 0, '2022-08-30 21:29:17', NULL),
+(12, '20220800007', 3, 'Sitapaila', 'cod', 0, 400, 0, 0, '2022-08-30 21:29:34', NULL),
+(13, '20220800008', 3, 'Sitapaila', 'cod', 0, 100, 0, 0, '2022-08-30 21:30:03', NULL),
+(14, '20220800009', 3, 'Sitapaila', 'cod', 0, 400, 3, 1, '2022-08-30 21:30:49', '2022-08-30 21:34:45'),
+(15, '20220800010', 3, 'Sitapaila', 'cod', 0, 299, 3, 1, '2022-08-30 21:31:13', '2022-08-30 21:34:10'),
+(16, '20220800011', 3, 'Sitapaila', 'cod', 0, 299, 3, 1, '2022-08-30 21:32:41', '2022-08-30 21:33:32'),
+(17, '20220800012', 3, 'Sitapaila', 'cod', 0, 800, 0, 0, '2022-08-30 21:35:57', NULL),
+(18, '20220800013', 3, 'Sitapaila', 'cod', 0, 1600, 0, 0, '2022-08-30 21:38:17', NULL),
+(19, '20220800014', 3, 'Sitapaila', 'cod', 0, 1700, 0, 0, '2022-08-30 21:38:37', NULL),
+(20, '20220800015', 3, 'Sitapaila', 'cod', 0, 100, 3, 1, '2022-08-30 21:38:49', '2022-08-30 21:39:44'),
+(21, '20220800016', 3, 'Sitapaila', 'cod', 0, 400, 0, 0, '2022-08-30 21:41:00', NULL),
+(22, '20220800017', 3, 'Sitapaila', 'cod', 0, 500, 0, 0, '2022-08-30 21:41:46', NULL),
+(23, '20220800018', 3, 'Sitapaila', 'cod', 0, 400, 3, 1, '2022-08-30 21:43:09', '2022-08-30 21:44:55'),
+(24, '20220800019', 3, 'Sitapaila', 'cod', 0, 400, 0, 0, '2022-08-30 21:51:28', NULL),
+(25, '20220800020', 3, 'Sitapaila', 'cod', 0, 400, 0, 0, '2022-08-30 21:52:38', NULL),
+(26, '20220800021', 3, 'Sitapaila', 'cod', 0, 299, 0, 0, '2022-08-30 22:00:30', NULL),
+(27, '20220800022', 3, 'Sitapaila', 'cod', 0, 150, 3, 1, '2022-08-31 06:57:44', '2022-08-31 06:58:15'),
+(28, '20220800023', 3, 'Sitapaila', 'cod', 0, 100, 0, 0, '2022-08-31 06:59:00', NULL),
+(29, '20220800024', 3, 'Sitapaila', 'cod', 0, 299, 0, 0, '2022-08-31 07:38:10', NULL),
+(30, '20220800025', 3, 'Sitapaila', 'cod', 0, 1495, 0, 0, '2022-08-31 07:47:50', NULL),
+(31, '20220800026', 3, 'Sitapaila', 'cod', 0, 400, 0, 0, '2022-08-31 18:03:44', NULL);
 
 -- --------------------------------------------------------
 
@@ -199,10 +230,16 @@ CREATE TABLE `order_list` (
 --
 
 INSERT INTO `order_list` (`id`, `order_id`, `inventory_id`, `quantity`, `price`, `total`) VALUES
-(4, 3, 3, 3, 300, 900),
-(5, 4, 3, 4, 300, 1200),
-(6, 4, 1, 3, 200, 600),
-(7, 5, 3, 2, 250, 500);
+(15, 13, 11, 1, 100, 100),
+(18, 16, 8, 1, 299, 299),
+(23, 20, 11, 1, 100, 100),
+(27, 24, 12, 1, 400, 400),
+(28, 25, 12, 1, 400, 400),
+(29, 26, 13, 1, 299, 299),
+(30, 27, 14, 1, 150, 150),
+(31, 28, 11, 1, 100, 100),
+(32, 29, 13, 1, 299, 299),
+(34, 31, 12, 1, 400, 400);
 
 -- --------------------------------------------------------
 
@@ -226,10 +263,15 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `brand_id`, `category_id`, `name`, `specs`, `status`, `delete_flag`, `date_created`) VALUES
-(1, 6, 8, 'Sample 101', '&lt;p style=&quot;margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify; color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif;&quot;&gt;orem ipsum dolor sit amet, consectetur adipiscing elit. Morbi congue interdum pellentesque. Praesent bibendum vehicula libero a congue. In molestie rhoncus finibus. In interdum quis urna sed auctor. Vivamus a ligula ut dui aliquam efficitur ut eu ante. Phasellus pretium ut risus vitae euismod. Cras ac velit mollis, sodales urna vitae, pharetra dui. Mauris et sem vel est interdum lobortis sit amet quis felis. Donec sit amet consectetur leo, eu lacinia risus. Donec dignissim magna lectus, vitae viverra lacus blandit vitae.&lt;/p&gt;&lt;p style=&quot;margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify; color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif;&quot;&gt;Proin sit amet elit in massa posuere ullamcorper quis quis sem. Phasellus accumsan augue vitae varius rhoncus. Proin vitae leo ante. Praesent a lorem justo. Nam nisl ex, condimentum nec malesuada cursus, ullamcorper in velit. Quisque lobortis diam nunc, at auctor felis placerat eu. Nullam egestas rhoncus lacinia.&lt;/p&gt;&lt;p style=&quot;margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify; color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif;&quot;&gt;Donec imperdiet viverra eros eu elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean in nulla nec ex cursus consequat nec vel ipsum. Phasellus tristique erat sit amet neque venenatis volutpat. Maecenas varius venenatis sagittis. Nullam quis gravida purus, quis sagittis nibh. Ut eget maximus nisl. Nam elementum diam libero, et scelerisque nisi molestie quis. Duis accumsan, neque nec laoreet malesuada, est ex pretium urna, at pellentesque arcu mauris a est. Proin et sollicitudin dui. Integer consectetur pulvinar tellus in fermentum.&lt;/p&gt;', 1, 0, '2022-02-17 11:50:19'),
-(2, 5, 7, 'test', '&lt;p&gt;test&lt;/p&gt;', 0, 1, '2022-02-17 11:54:02'),
-(3, 1, 1, 'Sample 102', '&lt;p style=&quot;margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify; color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif;&quot;&gt;Donec eu porttitor quam. Etiam mollis consequat risus quis maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam pretium et mi vel fringilla. Phasellus facilisis porttitor purus, a egestas magna rutrum ac. Donec in augue lorem. Donec varius elit ante, eget convallis leo ornare faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed finibus purus eget porta malesuada. Phasellus eu cursus urna.&lt;/p&gt;&lt;p style=&quot;margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify; color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif;&quot;&gt;Vestibulum quis velit ipsum. Sed placerat nisi leo, et aliquam massa laoreet at. Aenean fringilla nibh sit amet enim posuere, vitae vulputate turpis elementum. Mauris venenatis augue sed tincidunt efficitur. Praesent interdum odio sit amet lacus tincidunt vulputate. Sed pretium metus augue. Vivamus sed nisl ut metus accumsan interdum ac vel ante. Mauris ac placerat felis.&lt;/p&gt;', 1, 0, '2022-02-17 13:22:33'),
-(4, 4, 8, 'Sample 103', '&lt;p style=&quot;margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify; color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif;&quot;&gt;Suspendisse vel justo tempus, dignissim augue vel, tempor ipsum. Sed at porta nisi. Aliquam dui neque, gravida id massa sed, aliquam tincidunt libero. Nunc dictum tristique luctus. Pellentesque id urna vitae orci imperdiet hendrerit ut ac ipsum. Integer convallis non nisi a aliquet. Aenean consequat, mauris non rhoncus molestie, nibh tortor gravida turpis, a finibus ante turpis non turpis. Proin varius condimentum ultricies. Sed vestibulum commodo elit, vitae fermentum ligula accumsan a. In lobortis turpis ut faucibus lobortis. Pellentesque quis vestibulum nibh. Integer eget metus quis nibh varius fringilla. Praesent ac eleifend ligula, vitae suscipit felis. Nulla facilisi. Nullam ligula enim, interdum et lobortis dignissim, auctor quis mi. Cras ut odio porta, iaculis est nec, maximus dui.&lt;/p&gt;&lt;p style=&quot;margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify; color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif;&quot;&gt;Aenean eleifend arcu eu risus rutrum, at sollicitudin velit ultrices. Phasellus vulputate dictum lectus, eu cursus purus feugiat vel. In venenatis diam sem, sit amet congue lorem porttitor quis. Maecenas sit amet ante hendrerit, fermentum arcu sed, mollis dolor. Integer finibus ipsum eu libero tristique, eu venenatis mi fermentum. Nulla non nisl imperdiet, cursus ligula eu, feugiat mi. Integer ut porta leo, eu imperdiet nunc. Nullam maximus neque quis orci porttitor, ac commodo nibh convallis. Cras ac hendrerit lacus, ut maximus purus. Praesent hendrerit magna mi, vel consequat erat pulvinar id. Nam pharetra fringilla nunc. Proin aliquet justo sed massa pellentesque, in interdum arcu vulputate. Aliquam sed tempor libero, sit amet ultrices arcu. Nam sit amet lacinia risus. Etiam tellus purus, cursus a facilisis sed, pharetra id eros.&lt;/p&gt;', 1, 0, '2022-02-17 16:27:41');
+(8, 10, 1, 'Sunscreen cream', '&lt;p&gt;Protects from UV rays&lt;/p&gt;', 1, 0, '2022-08-30 21:08:36'),
+(9, 9, 5, 'Sunsilk black', '&lt;p&gt;Best shampoo range for years.&lt;/p&gt;', 1, 0, '2022-08-30 21:09:44'),
+(10, 9, 5, 'Sunsilk pink', '&lt;p&gt;Best Shampoo&lt;/p&gt;', 1, 0, '2022-08-30 21:10:29'),
+(11, 8, 2, 'Colgate', '&lt;p&gt;For strong teeth&lt;/p&gt;', 1, 0, '2022-08-30 21:11:33'),
+(12, 11, 3, 'BB Creame', '&lt;p&gt;For smooth Skin&lt;/p&gt;', 1, 0, '2022-08-30 21:49:31'),
+(13, 11, 3, 'Compact Powder', '&lt;p&gt;lakme product&lt;/p&gt;', 1, 0, '2022-08-30 21:59:42'),
+(14, 12, 11, 'XYZ', '&lt;p&gt;Natural&lt;/p&gt;', 1, 0, '2022-08-31 06:56:09'),
+(15, 8, 2, 'Sensodyne', '&lt;p&gt;strong teeth&lt;/p&gt;', 1, 0, '2022-08-31 07:03:23'),
+(16, 12, 2, 'Pepsodent', '&lt;p&gt;asdfgh&lt;/p&gt;', 1, 0, '2022-08-31 07:04:35');
 
 -- --------------------------------------------------------
 
@@ -249,9 +291,22 @@ CREATE TABLE `sales` (
 --
 
 INSERT INTO `sales` (`id`, `order_id`, `total_amount`, `date_created`) VALUES
-(3, 3, 900, '2022-02-17 14:51:58'),
-(4, 4, 1800, '2022-02-17 15:26:17'),
-(5, 5, 500, '2022-02-17 15:32:52');
+(6, 6, 350, '2022-08-30 20:03:51'),
+(7, 7, 1250, '2022-08-30 20:04:26'),
+(8, 8, 155, '2022-08-30 20:10:09'),
+(9, 11, 500, '2022-08-30 21:29:17'),
+(10, 13, 100, '2022-08-30 21:30:03'),
+(11, 15, 299, '2022-08-30 21:31:14'),
+(12, 16, 299, '2022-08-30 21:32:41'),
+(13, 20, 100, '2022-08-30 21:38:49'),
+(14, 22, 500, '2022-08-30 21:41:46'),
+(15, 24, 400, '2022-08-30 21:51:28'),
+(16, 25, 400, '2022-08-30 21:52:39'),
+(17, 26, 299, '2022-08-30 22:00:30'),
+(18, 27, 150, '2022-08-31 06:57:45'),
+(19, 28, 100, '2022-08-31 06:59:00'),
+(20, 29, 299, '2022-08-31 07:38:11'),
+(21, 31, 400, '2022-08-31 18:03:45');
 
 -- --------------------------------------------------------
 
@@ -270,11 +325,11 @@ CREATE TABLE `system_info` (
 --
 
 INSERT INTO `system_info` (`id`, `meta_field`, `meta_value`) VALUES
-(1, 'name', 'Online Cosmetics Store'),
-(6, 'short_name', 'Cosmetics'),
-(11, 'logo', 'uploads/logo-1645065716.jpg?v=1645065716'),
+(1, 'name', 'Online Cosmetic  Store'),
+(6, 'short_name', 'Cosmetics Store'),
+(11, 'logo', 'uploads/logo-1661870103.jpg?v=1661870103'),
 (13, 'user_avatar', 'uploads/user_avatar.jpg'),
-(14, 'cover', 'uploads/cover-1645065725.jpg?v=1645065725');
+(14, 'cover', 'uploads/cover-1661870103.jpg?v=1661870103');
 
 -- --------------------------------------------------------
 
@@ -300,7 +355,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `password`, `avatar`, `last_login`, `type`, `date_added`, `date_updated`) VALUES
-(1, 'Adminstrator', 'Admin', 'admin', '0192023a7bbd73250516f069df18b500', 'uploads/avatars/1.png?v=1645064505', NULL, 1, '2021-01-20 14:02:37', '2022-02-17 10:21:45');
+(1, 'Pradip', 'Thagunna', 'pradip', 'dac1c5e85e5c3130af9fbdeafe998161', 'uploads/avatars/1.JPG?v=1669290735', NULL, 1, '2021-01-20 14:02:37', '2022-11-24 17:37:15');
 
 --
 -- Indexes for dumped tables
@@ -389,55 +444,55 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `order_list`
 --
 ALTER TABLE `order_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `system_info`
